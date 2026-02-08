@@ -261,33 +261,33 @@ Claude: [调用 convert_logs]
 
 AgentRecorder 是 AI Data Pipeline 生态的轨迹录制组件：
 
-```
-┌─────────────────────────────────────────────────────────────────────────────────────────────┐
-│                                    AI Data Pipeline 生态                                     │
-├──────────────┬──────────────┬──────────────┬──────────────┬──────────────────────────────────┤
-│  DataRecipe  │  DataLabel   │  DataSynth   │  DataCheck   │        Agent Pipeline            │
-│   数据分析    │    数据标注   │    数据合成   │    数据质检    │                                  │
-├──────────────┼──────────────┼──────────────┼──────────────┼──────────────────────────────────┤
-│ · 逆向工程分析│ · HTML标注界面│ · LLM批量生成 │ · 规则验证    │  TrajectoryHub  轨迹数据集管理    │
-│ · Schema提取 │ · 多标注员合并│ · 种子数据扩充│ · 重复检测    │  AgentSandbox   沙箱执行环境      │
-│ · 成本估算   │ · IAA一致性  │ · 成本追踪    │ · 分布分析    │  AgentRecorder  轨迹录制转换      │
-│ · 样例生成   │ · 断点续标   │ · 交互/API模式│ · 质量报告    │  AgentReward    轨迹质量评分      │
-└──────────────┴──────────────┴──────────────┴──────────────┴──────────────────────────────────┘
+```mermaid
+graph LR
+    Radar["🔍 Radar<br/>情报发现"] --> Recipe["📋 Recipe<br/>逆向分析"]
+    Recipe --> Synth["🔄 Synth<br/>数据合成"]
+    Recipe --> Label["🏷️ Label<br/>数据标注"]
+    Synth --> Check["✅ Check<br/>数据质检"]
+    Label --> Check
+    Check --> Hub["🎯 Hub<br/>编排层"]
+    Hub --> Sandbox["📦 Sandbox<br/>执行沙箱"]
+    Sandbox --> Recorder["📹 Recorder<br/>轨迹录制"]
+    Recorder --> Reward["⭐ Reward<br/>过程打分"]
+    style Recorder fill:#0969da,color:#fff,stroke:#0969da
 ```
 
 ### 生态项目
 
-| 项目 | 功能 | 仓库 |
-|------|------|------|
-| **AI Dataset Radar** | 数据集竞品监控 | [ai-dataset-radar](https://github.com/liuxiaotong/ai-dataset-radar) |
-| **DataRecipe** | 数据集逆向分析 | [data-recipe](https://github.com/liuxiaotong/data-recipe) |
-| **DataSynth** | 数据合成扩充 | [data-synth](https://github.com/liuxiaotong/data-synth) |
-| **DataLabel** | 轻量级标注工具 | [data-label](https://github.com/liuxiaotong/data-label) |
-| **DataCheck** | 数据质量检查 | [data-check](https://github.com/liuxiaotong/data-check) |
-| **TrajectoryHub** | 轨迹数据集管理 | [agent-trajectory-hub](https://github.com/liuxiaotong/agent-trajectory-hub) |
-| **AgentSandbox** | Agent 沙箱执行 | [agent-sandbox](https://github.com/liuxiaotong/agent-sandbox) |
-| **AgentRecorder** | Agent 轨迹录制 | You are here |
-| **AgentReward** | 轨迹质量评分 | [agent-reward](https://github.com/liuxiaotong/agent-reward) |
+| 层 | 项目 | 说明 | 仓库 |
+|---|---|---|---|
+| 情报 | **AI Dataset Radar** | 数据集竞争情报、趋势分析 | [GitHub](https://github.com/liuxiaotong/ai-dataset-radar) |
+| 分析 | **DataRecipe** | 逆向分析、Schema 提取、成本估算 | [GitHub](https://github.com/liuxiaotong/data-recipe) |
+| 生产 | **DataSynth** | LLM 批量合成、种子数据扩充 | [GitHub](https://github.com/liuxiaotong/data-synth) |
+| 生产 | **DataLabel** | 轻量标注工具、多标注员合并 | [GitHub](https://github.com/liuxiaotong/data-label) |
+| 质检 | **DataCheck** | 规则验证、重复检测、分布分析 | [GitHub](https://github.com/liuxiaotong/data-check) |
+| Agent | **AgentSandbox** | Docker 执行沙箱、轨迹重放 | [GitHub](https://github.com/liuxiaotong/agent-sandbox) |
+| Agent | **AgentRecorder** | 标准化轨迹录制、多框架适配 | You are here |
+| Agent | **AgentReward** | 过程级 Reward、Rubric 多维评估 | [GitHub](https://github.com/liuxiaotong/agent-reward) |
+| 编排 | **TrajectoryHub** | Pipeline 编排、数据集导出 | [GitHub](https://github.com/liuxiaotong/agent-trajectory-hub) |
 
 ### 端到端工作流 / End-to-end Flow
 
@@ -427,20 +427,23 @@ src/agentrecorder/
 
 > 9 个工具覆盖 AI 数据工程全流程，均支持 CLI + MCP，可独立使用也可组合成流水线。
 
-| Tool | Description | Link |
-|------|-------------|------|
-| **AI Dataset Radar** | Competitive intelligence for AI training datasets | [GitHub](https://github.com/liuxiaotong/ai-dataset-radar) |
-| **DataRecipe** | Reverse-engineer datasets into annotation specs & cost models | [GitHub](https://github.com/liuxiaotong/data-recipe) |
-| **DataSynth** | Seed-to-scale synthetic data generation | [GitHub](https://github.com/liuxiaotong/data-synth) |
-| **DataLabel** | Lightweight, serverless HTML labeling tool | [GitHub](https://github.com/liuxiaotong/data-label) |
-| **DataCheck** | Automated quality checks & anomaly detection | [GitHub](https://github.com/liuxiaotong/data-check) |
-| **AgentSandbox** | Sandboxed execution environment for coding agents | [GitHub](https://github.com/liuxiaotong/agent-sandbox) |
-| **AgentRecorder** | Convert agent logs to standardized trajectories | You are here |
-| **AgentReward** | Trajectory quality scoring & reward modeling | [GitHub](https://github.com/liuxiaotong/agent-reward) |
-| **TrajectoryHub** | Trajectory dataset management & versioning | [GitHub](https://github.com/liuxiaotong/agent-trajectory-hub) |
+| 层 | 项目 | 说明 | 仓库 |
+|---|---|---|---|
+| 情报 | **AI Dataset Radar** | 数据集竞争情报、趋势分析 | [GitHub](https://github.com/liuxiaotong/ai-dataset-radar) |
+| 分析 | **DataRecipe** | 逆向分析、Schema 提取、成本估算 | [GitHub](https://github.com/liuxiaotong/data-recipe) |
+| 生产 | **DataSynth** | LLM 批量合成、种子数据扩充 | [GitHub](https://github.com/liuxiaotong/data-synth) |
+| 生产 | **DataLabel** | 轻量标注工具、多标注员合并 | [GitHub](https://github.com/liuxiaotong/data-label) |
+| 质检 | **DataCheck** | 规则验证、重复检测、分布分析 | [GitHub](https://github.com/liuxiaotong/data-check) |
+| Agent | **AgentSandbox** | Docker 执行沙箱、轨迹重放 | [GitHub](https://github.com/liuxiaotong/agent-sandbox) |
+| Agent | **AgentRecorder** | 标准化轨迹录制、多框架适配 | You are here |
+| Agent | **AgentReward** | 过程级 Reward、Rubric 多维评估 | [GitHub](https://github.com/liuxiaotong/agent-reward) |
+| 编排 | **TrajectoryHub** | Pipeline 编排、数据集导出 | [GitHub](https://github.com/liuxiaotong/agent-trajectory-hub) |
 
-```
-Radar (发现) → Recipe (分析) → Synth (合成) → Label (标注) → Check (质检) + Hub (管理) → Sandbox (执行) → Recorder (录制) → Reward (评分)
+```mermaid
+graph LR
+    A[Radar] --> B[Recipe] --> C[Synth] --> E[Check] --> F[Hub]
+    B --> D[Label] --> E
+    F --> G[Sandbox] --> H[Recorder] --> I[Reward]
 ```
 
 ---
